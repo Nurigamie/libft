@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbuchet <mbuchet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/01 16:10:40 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/01 16:53:53 by mbuchet          ###   ########.fr       */
+/*   Created: 2021/10/01 16:38:36 by mbuchet           #+#    #+#             */
+/*   Updated: 2021/10/01 16:38:41 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+char *ft_strcpy(char *dest, char *src)
 {
-	int	i;
-	
-	i = 0;
-	while (str[i] != 0)
-	{
-		i++;
-	}
-	return (i);
+int i;
+
+i = 0;
+while(src[i] != '\0'){
+    dest[i] = src[i];
+    i++;
+}
+  dest[i] = '\0';
+ return(dest);
 }
