@@ -3,18 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbuchet <mbuchet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:52:20 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/01 16:57:07 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/05 22:27:11 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 void bzero(void *s, int n)
 {
-    while (*s != s[n])
-    {
-        *s = "0";
-    }
-
+  ft_memset (s, '\0', n);
 }
