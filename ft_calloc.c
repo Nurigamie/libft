@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fr_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 10:14:49 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/05 10:14:49 by mbuchet          ###   ########.fr       */
+/*   Created: 2021/10/05 22:41:41 by mbuchet           #+#    #+#             */
+/*   Updated: 2021/10/05 22:41:41 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr (const char *str, int c)
-{
-	int		i;
-	char	*j;
 
-	i = 0;
-	j = NULL;
-	while (str[i] != '\0')
-	{
-		if (str[i] == (char)c)
-			j = ((char *)&str[i]);
-		i++;
+void *ft_calloc(size_t m, size_t n)
+{
+	void *p;
+	size_t *z;
+	if (n && m > (size_t)-1/n) {
+		errno = ENOMEM;
+		return 0;
 	}
-	if (str[i] == (char)c)
-		j = ((char *)&s[i]);
-	return (j);
+	n *= m;
+	p = malloc(n);
+	if (!p) return 0;
+	if (((size_t *)p)[-1] & 7) {
+		m = (n + sizeof *z - 1)/sizeof *z;
+		for (z=p; m; m--, z++) if (*z) *z=0;
+	}
+	return p;
 }

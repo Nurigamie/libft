@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fr_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 10:14:49 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/05 10:14:49 by mbuchet          ###   ########.fr       */
+/*   Created: 2021/10/05 22:40:07 by mbuchet           #+#    #+#             */
+/*   Updated: 2021/10/05 22:40:07 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr (const char *str, int c)
+char	*ft_strdup(const char *s1)
 {
+	char	*str;
 	int		i;
-	char	*j;
 
 	i = 0;
-	j = NULL;
-	while (str[i] != '\0')
+	if ((str = (char *)malloc(sizeof(const char) * ft_strlen(s1) + 1)))
+		str[ft_strlen(s1)] = '\0';
+	else
+		return (NULL);
+	while (s1[i])
 	{
-		if (str[i] == (char)c)
-			j = ((char *)&str[i]);
+		str[i] = s1[i];
 		i++;
 	}
-	if (str[i] == (char)c)
-		j = ((char *)&s[i]);
-	return (j);
+	return (str);
 }
