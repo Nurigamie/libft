@@ -6,70 +6,53 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 13:19:34 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/11 16:35:46 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/11 16:48:58 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *zStrtok(char *str, const char *delim) {
-    static char *static_str=0;      /* var to store last address */
-    int index=0, strlength=0;           /* integers for indexes */
-    int found = 0;                  /* check if delim is found */
-
-    /* delimiter cannot be str
-    * if no more char left, return str as well
-    */
-    if (delim==0 || (str == 0 && static_str == 0))
+char **ft_split(char const *s, char c)
+{
+    char *str=0; 
+    int i=0;
+    int length=0;           
+    int found = 0; 
+//si pas de char+ pas de c == null
+    if (c==0 || (s == 0 && str == 0))
         return 0;
 
-    if (str == 0)
-        str = static_str;
+    if (s == 0)
+        s = str;
+//taille string
+    while(s[length])
+        length++;
 
-    /* get length of string */
-    while(str[strlength])
-        strlength++;
-
-    /* find the first occurance of delim */
-    while (index<strlength)
-        if (str[index]==delim[0]) {
+//premier occurence string
+    while (i<length)
+        if (s[i]==c[0]) {
             found=1;
             break;
         }
 
-    /* if delim is not contained in str, return str */
+//si c n'existe pqs juste retourner s
     if (!found) {
-        static_str = 0;
-        return str;
+        str = 0;
+        return s;
     }
 
-    /* check for consecutive delimiters
-    *if first char is delim, return delim
-    */
-    if (str[0]==delim[0]) {
-        static_str = (str + 1);
-        return (char *)delim;
+//si c++
+    if (s[0]==c[0]) {
+        str = (s + 1);
+        return (c);
     }
 
-    /* terminate the string
-    * this assignmetn requires char[], so str has to
-    * be char[] rather than *char
-    */
-    str[index] = '\0';
+//fin string
+    s[i] = '\0';
 
-    /* save the rest of the string */
-    if ((str + index + 1)!=0)
-        static_str = (str + index + 1);
+//ce qu'il reste de la string
+    if ((s + i + 1)!=0)
+        str = (s + i + 1);
     else
-        static_str = 0;
+        str = 0;
 
-        return str;
-}
-int main(void)
-{
-    char str[] = "A,B,,,C";
-      printf("1 %s\n",zStrtok(str,","));
-      printf("2 %s\n",zStrtok(str,","));
-      printf("3 %s\n",zStrtok(str,","));
-      printf("4 %s\n",zStrtok(str,","));
-      printf("5 %s\n",zStrtok(str,","));
-      printf("6 %s\n",zStrtok(str,","));
+        return s;
 }
