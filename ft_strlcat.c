@@ -6,40 +6,36 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 17:30:12 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/05 22:25:20 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/19 13:29:34 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 size_t strlcat(char *dest, const char *src, size_t size)
 {
-    int d_len;
-	int s_len;
-	int len;
-	int i;
-    /* obtain initial sizes */
-    d_len = ft_strlen(dest);
-    s_len = ft_strlen(src);
+    size_t  i;
+	size_t j;
+	size_t src_len;
+	size_t dst_len;
 
-    /* get the end of dest */
-    len = d_len;
-
-    /* append src */
-    i = 0;
-    while( *(src+i) != '\0' )
-    {
-        *(dest+len) = *(src+i);
-        len++;
-        i++;
-        /* don't copy more than dstsize characters
-           minus one */
-        if( len==dest size-1)
-            break;
-    }
-    /* always cap the string! */
-    *(dest+len) = '\0';
-
-    return( d_len + s_len );
+	j = 0;
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	i = dst_len;
+	if (size == 0)
+		return (src_len);
+	if (dstsize < dst_len)
+		return (src_len + size);
+	else
+	{
+		while (src[j] && (dst_len + j) < size)
+			dst[i++] = src[j++];
+		if ((dst_len + j) == size && dst_len < size)
+			dst[--i] = '\0';
+		else
+			dst[i] = '\0';
+		return (src_len + dst_len);
+	}
 
 }
 

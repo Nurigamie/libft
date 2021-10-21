@@ -3,29 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbuchet <mbuchet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:01:55 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/11 15:48:50 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:12:47 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(char *str)
+int ft_isalpha(int arg)
 {
-    int i;
-
-    i = 0;
-
-    while(str[i] != '\0')
-    { 
-        if(str[i]>= 65  && str[i]<= 90 || str[i]>= 97 && str[i]<= 122)
-        {
-            i++;
-        }
-        else
-            return(0);
-    }
-    return(1);
+return((arg>= 65  && arg<= 90) || (arg>= 97 && arg<= 122));
 }
 #include <stdio.h>
 #include <ctype.h>

@@ -3,31 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbuchet <mbuchet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:33:07 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/11 15:48:40 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:10:03 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum( int arg )
+int		ft_isalnum(int c)
 {
-    int i;
-
-    i = 0;
-
-    while(arg != '\0')
-    {
-       if(arg <= 48 && arg >= 57 || arg > = 65  && arg<= 90 || arg>= 97 && arg<= 122) 
-       i++;
-       else
-       return(0);
-    }
-    return(1);
+	if ((c >= 65 && c <= 90)
+			|| (c >= 97 && c <= 122)
+			|| (c >= 48 && c <= 57))
+		return (c);
+	return (0);
 }
 #include <stdio.h>
 #include <ctype.h>
-
+#include <stdlib.h>
 int main ()
 {
     printf("54 	is 		%d\n", ft_isalnum(54));

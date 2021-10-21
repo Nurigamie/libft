@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 22:40:07 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/05 22:40:07 by mbuchet          ###   ########.fr       */
+/*   Created: 2021/10/19 16:07:59 by mbuchet           #+#    #+#             */
+/*   Updated: 2021/10/19 16:07:59 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strdup(const char *s1)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*str;
-	size_t		i;
+	int i;
 
-	i = ft_strlen(s1) + 1;
-	str =malloc(sizeof(const char) * ft_strlen(s1) + 1)
-	if (!str)
-		return (0);
-	str = ft_memcpy(rtn, s1, len);
-	return (str);
+	i = 0;
+	if (s)
+		while (s[i] != '\0')
+			write(fd, &s[i++], 1);
 }

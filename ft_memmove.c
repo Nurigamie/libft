@@ -6,24 +6,26 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 17:03:51 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/04 15:38:38 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/19 11:47:36 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memmove(void *dest, const void *src, size_t n)
+void *memmove(void *dst, const void *src, size_t n)
 {
-    char *destbis = dest;
-    const char *srcbis = src;
+    char *dstbis;
+    char *srcbis;
 
-    if(destbis < srcbis)
-        while(n--)
-            *destbis++ = *srcbis++;
-    else
+    dstbis =(char *)dst;
+    srcbis = (char *)src;
+    if(dst == src)
+        return (dst);
+    if(srcbis < dstbis)
     {
-        char *lasts = s + (n - 1);
-        char *lastd = d + (n - 1);
         while(n--)
-            *lastd-- = *lasts--;  
+            *(dstbis + n) = *(srcbis + n);  
+            return(dst);
     }         
-    return(dest);
+    while (n--)
+        *dstbis++ = *srcbis++; 
+    return(dst);
 }

@@ -10,41 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int STRNCMP (const char *str1, const char *str2, size_t n)
+int ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-  unsigned char c1 = '\0';
-  unsigned char c2 = '\0';
-  if (n >= 4)
-    {
-      size_t n4 = n >> 2;
-      do
-        {
-          c1 = (unsigned char) *str1++;
-          c2 = (unsigned char) *str2++;
-          if (c1 == '\0' || c1 != c2)
-            return c1 - c2;
-          c1 = (unsigned char) *str1++;
-          c2 = (unsigned char) *str2++;
-          if (c1 == '\0' || c1 != c2)
-            return c1 - c2;
-          c1 = (unsigned char) *str1++;
-          c2 = (unsigned char) *str2++;
-          if (c1 == '\0' || c1 != c2)
-            return c1 - c2;
-          c1 = (unsigned char) *str1++;
-          c2 = (unsigned char) *str2++;
-          if (c1 == '\0' || c1 != c2)
-            return c1 - c2;
-        } while (--n > 0);
-      n &= 3;
-    }
-  while (n > 0)
-    {
-      c1 = (unsigned char) *str1++;
-      c2 = (unsigned char) *str2++;
-      if (c1 == '\0' || c1 != c2)
-        return c1 - c2;
-      n--;
-    }
-  return c1 - c2;
+size_t  i;
+i = 0;
+if (n == 0)
+		return (0);
+	while (i < n - 1 && s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

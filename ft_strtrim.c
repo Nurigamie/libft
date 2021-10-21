@@ -3,34 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbuchet <mbuchet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:47:04 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/11 12:05:10 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/19 15:32:23 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strtrim(char const *s1, char const *set)
+static int		is_in_set(char c, const char *set)
 {
-    int i;
-    char *str;
-    
-    if ((str = (char *)malloc(sizeof(const char) * ft_strlen(s1) + 1)))
-		str[ft_strlen(s1)] = '\0';
-	else
-		return (NULL);
+	while (*set)
+		if (c == *set++)
+			return (0);
+	return (1);
+}
 
-    while(s1[i])
-    {
-        if(s1[i] == set)
-        {
-            i++;
-        }
-        else
-        {
-            *str = s1[i];
-            i++;
-        }
-    }
-    return(str);
-    }
+char			*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	start;
+	size_t	end;
+	char	*str;
+
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
+	start = 0;
+	end = ft_strlen(s1);
+	while (is_in_set(s1[start], set) == 0)
+		start++;
+	if (start == ft_strlen(s1))
+	{
+		if (!(str = ft_strdup("")))
+			return (NULL);
+		else
+			return (str);
+	}
+	while (is_in_set(s1[end - 1], set) == 0)
+		end--;
+	str = ft_substr(s1, start, end - start);
+	return (str);
+}

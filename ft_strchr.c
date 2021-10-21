@@ -12,11 +12,16 @@
 
 char *strchr (register const char *str, int c)
 {
-while (*str++){
+while (*str++)
+{
     if (*str == c)
       {
         return (*str);
-    }
-    }
+      }
+}
+if (*str == c)
+{
+  return (*str);
+}
   return (0);
 }

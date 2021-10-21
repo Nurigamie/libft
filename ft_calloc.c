@@ -13,22 +13,16 @@
 
 void *ft_calloc(size_t m, size_t n)
 {
-	void *p;
-	size_t *z;
-	if (n && m > (size_t)-1/n) {
-		error = ENOMEM;
-		return 0;
-	}
-	n *= m;
-	p = malloc(n);
-	if (!p) return 0;
-	if (((size_t *)p)[-1] & 7) {
-		m = (n + sizeof *z - 1)/sizeof *z;
-		for (z=p; m; m--, z++) if (*z) *z=0;
-	}
-	return p;
+	void	*str;
+
+	str = malloc(size * count);
+	if (!str)
+		return (NULL);
+	ft_bzero(str, count);
+	return (str);
 }
 #include <stdio.h>
+#include <stdlib.h>
 
 int main ()
 {
