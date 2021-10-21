@@ -14,9 +14,9 @@ void	*ft_calloc(size_t m, size_t n)
 {
 	void	*str;
 
-	str = malloc(m * n);
+	str = (void *)malloc(m * n);
 	if (!str)
 		return (NULL);
-	ft_bzero(str, m);
+	ft_bzero(str, m * n);
 	return (str);
 }
