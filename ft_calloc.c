@@ -10,24 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include "ft_bzero.c"
+#include <stdio.h>
 
 void *ft_calloc(size_t m, size_t n)
 {
 	void	*str;
 
-	str = malloc(size * count);
+	str = malloc(m * n);
 	if (!str)
 		return (NULL);
-	ft_bzero(str, count);
+	ft_bzero(str, m);
 	return (str);
 }
-#include <stdio.h>
-#include <stdlib.h>
 
 int main ()
 {
-	printf(" |%s| %p\n",ft_calloc(12,10),ft_calloc(12,10));
-	printf(" |%s| %p\n",ft_calloc(20,10),ft_calloc(20,10));
-	printf(" |%s| %p\n",ft_calloc(12,8),ft_calloc(12,8));
-	printf(" |%s| %p\n",ft_calloc(0,0),ft_calloc(0,0));
+	printf(" |%s| %p\n",ft_calloc(12,10),calloc(12,10));
+	printf(" |%s| %p\n",ft_calloc(20,10),calloc(20,10));
+	printf(" |%s| %p\n",ft_calloc(12,8),calloc(12,8));
+	printf(" |%s| %p\n",ft_calloc(0,0),calloc(0,0));
 }

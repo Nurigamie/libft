@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:16:59 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/20 16:13:40 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/21 12:34:22 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ void *ft_memset(void *str, int c, size_t n)
     }
     return (str = strbis);
 }
-

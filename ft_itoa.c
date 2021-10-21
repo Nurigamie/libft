@@ -6,24 +6,15 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 12:07:44 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/20 12:22:14 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/21 11:58:28 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "ft_strdup.c"
+#include "ft_memcpy.c"
+#include "ft_strlen.c"
 
-char	*ft_strdup(const char *s1)
-{
-	char	*str;
-	size_t		i;
-
-	i = ft_strlen(s1) + 1;
-	str =malloc(sizeof(const char) * ft_strlen(s1) + 1)
-	if (!str)
-		return (0);
-	str = ft_memcpy(rtn, s1, len);
-	return (str);
-}
 static int		len(long n)
 {
 	size_t length;
@@ -35,7 +26,7 @@ static int		len(long n)
 	{
 		length++;
 		signe++;
-		n = -n 
+		n = -n; 
 	}
 	while (n >= 1)
 	{
