@@ -6,11 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:01:55 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 11:51:22 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/21 14:57:18 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int arg)
+int	ft_isalpha(int arg)
 {
-return((arg>= 65  && arg<= 90) || (arg>= 97 && arg<= 122));
+	return ((arg >= 65 && arg <= 90) || (arg >= 97 && arg <= 122));
 }

@@ -10,15 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include"ft_strlen.c"
+#include"ft_memcpy.c"
+#include <stdlib.h>
+#include <string.h>
+
 char	*ft_strdup(const char *s1)
 {
 	char	*str;
-	size_t		i;
+	size_t	i;
 
-	i = ft_strlen(s1) + 1;
-	str =malloc(sizeof(const char) * ft_strlen(s1) + 1)
+	i = ft_strlen((char *)s1) + 1;
+	str = malloc(sizeof(const char) * ft_strlen((char *)s1) + 1);
 	if (!str)
 		return (0);
-	str = ft_memcpy(rtn, s1, len);
+	str = ft_memcpy(str, (char *)s1, i);
 	return (str);
 }

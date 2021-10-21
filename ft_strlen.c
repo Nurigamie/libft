@@ -6,17 +6,19 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:10:40 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/19 13:30:41 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/21 17:50:16 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *str)
 {
 	int	i;
-	
+
 	i = 0;
-	if(!str)
-		return(0);
+	if (!str)
+		return (0);
 	while (str[i] != 0)
 	{
 		i++;

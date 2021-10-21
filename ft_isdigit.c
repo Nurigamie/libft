@@ -6,11 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:18:52 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 11:52:32 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/21 14:58:19 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit( int arg )
+int	ft_isdigit( int arg )
 {
-return(arg >= 48 && arg <= 57);
+	return (arg >= 48 && arg <= 57);
 }

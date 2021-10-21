@@ -6,25 +6,27 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 17:30:12 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/19 13:29:34 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/21 17:03:18 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+#include "ft_strlen.c"
 
-size_t strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t  i;
-	size_t j;
-	size_t src_len;
-	size_t dst_len;
+	size_t	i;
+	size_t	j;
+	size_t	src_len;
+	size_t	dst_len;
 
 	j = 0;
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
+	dst_len = ft_strlen((char *)dst);
+	src_len = ft_strlen((char *)src);
 	i = dst_len;
 	if (size == 0)
 		return (src_len);
-	if (dstsize < dst_len)
+	if (size < dst_len)
 		return (src_len + size);
 	else
 	{
@@ -36,6 +38,5 @@ size_t strlcat(char *dest, const char *src, size_t size)
 			dst[i] = '\0';
 		return (src_len + dst_len);
 	}
-
 }
 

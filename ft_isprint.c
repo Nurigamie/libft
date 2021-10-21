@@ -6,11 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:02:48 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 11:56:11 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/21 14:58:59 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint (int c)
+int	ft_isprint(int c)
 {
-return(c >= 32 && c <= 126);
+	return (c >= 32 && c <= 126);
 }

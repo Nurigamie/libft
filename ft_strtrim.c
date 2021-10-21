@@ -6,11 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:47:04 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/19 15:32:23 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/21 18:02:42 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int		is_in_set(char c, const char *set)
+static int	is_in_set(char c, const char *set)
 {
 	while (*set)
 		if (c == *set++)
@@ -18,7 +18,7 @@ static int		is_in_set(char c, const char *set)
 	return (1);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
@@ -34,13 +34,42 @@ char			*ft_strtrim(char const *s1, char const *set)
 		start++;
 	if (start == ft_strlen(s1))
 	{
-		if (!(str = ft_strdup("")))
+		str = ft_strdup("");
+		if (!str)
 			return (NULL);
-		else
-			return (str);
+		return (str);
 	}
 	while (is_in_set(s1[end - 1], set) == 0)
 		end--;
 	str = ft_substr(s1, start, end - start);
 	return (str);
+}
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+	char * seta = "abcd";
+	char * stra = "abcdradiateurabcd";
+	printf(" %s \n\n", ft_strtrim(stra, seta));
+
+	char * setb = "abcd";
+	char * strb = "aaaaaaradiateurccccc";
+	printf(" %s \n\n", ft_strtrim(strb, setb));
+
+	char * setc = "abcd";
+	char * strc = "radiateurabcd";
+	printf(" %s \n\n", ft_strtrim(strc, setc));
+
+	char * setd = "";
+	char * strd = "radiateur";
+	printf(" %s \n\n", ft_strtrim(strd, setd));
+
+	char * sete = "abcd";
+	char * stre = "";
+	printf(" %s \n\n", ft_strtrim(stre, sete));
+
+	char * setf = "*@#";
+	char * strf = "#@je suis @ une phrase #.@@@@@";
+	printf(" %s \n\n", ft_strtrim(strf, setf));
 }

@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *strchr (register const char *str, int c)
+char	*ft_strchr(register const char *str, int c)
 {
-while (*str++)
-{
-    if (*str == c)
-      {
-        return (*str);
-      }
-}
-if (*str == c)
-{
-  return (*str);
-}
-  return (0);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+			return ((char *)str + i);
+		i++;
+	}
+	if (str[i] == c)
+		return ((char *)str + i);
+	return (0);
 }
