@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:41:24 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 14:50:29 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/22 12:11:53 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,23 @@ int	ft_atoi(const char *str)
 	i = 0;
 	signe = 0;
 	res = 0;
-	while (str[i] == 32)
+	while (str[i] != '\0' && (str[i] == 32 || str[i] == '\t' || str[i] == '\n'
+			|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')))
 		i++;
-	while ((str[i] != '\0') && (str[i] == '+' || str[i] == '-'))
-	{
-		if (str[i] == '-')
-			signe++;
-		i++;
-	}
-	if (signe % 2 != 0 )
-		signe = -1;
-	else
-		signe = +1 ;
+
+		if (str[i] != '\0' && str[i] == '-')
+		{
+			signe = 1;
+			i++;
+		}
+		else if (str[i] == '+')
+			i++;
 	while ((str[i] != '\0') && (str[i] >= 48 && str[i] <= 57))
 	{
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
-	return (res * signe);
+	if (signe == 1)
+		return (-res);
+	return (res);
 }

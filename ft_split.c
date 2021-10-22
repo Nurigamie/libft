@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 13:19:34 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 16:53:58 by mbuchet          ###   ########.fr       */
+/*   Updated: 2021/10/22 12:22:22 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,30 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+
 static int  nbword(char const *s, char c)
 {
-    size_t nbr;
+    size_t nbw;
     int i;
-    nbr = 0;
+    
+    nbw = 0;
     i = 0 ;
     //s[i]!='\0' => s[i]
     while(s[i])
     {
         while(s[i] == c)
-        i++;
+            i++;
         if (i > 0 && s[i] && s[i - 1] == c)
-            nbr++;
+            nbw++;
         if (s[i])
             i++;
     }
-    if (nbr == 0 && s[i-1]==c)
+    if (nbw == 0 && s[i-1]==c)
         return(0);
     if (s[0] != c )
-    nbr++;
+    nbw++;
 
-    return(nbr);    
+    return(nbw);    
 }
 static char **alloc(char **str, char const *s, char c )
 {
@@ -58,10 +60,10 @@ static char **alloc(char **str, char const *s, char c )
             count = 0;
             j++;
         }
-        if(s[i+1] =='\0' && s[i] != c)
-            if(!(str[j] = malloc(sizeof(char) * (count +1))))
-                return (0);
-            i++;
+        if ((s[i + 1] =='\0') && (s[i] != c))
+            if(!(str[j] = malloc(sizeof(char) * (count + 1))))
+                return (0); 
+        i++;
     }
     return(str);
 }
@@ -78,14 +80,14 @@ static char **tab(char **str, char const *s, char c)
     {
         if (s[i] != c)
             str[j][k++] = s[i];
-        else if (i >0 && s[i - 1])
+        else if (i > 0 && s[i - 1] != c)
             if(i!=0)
             {
                 str[j][k]='\0';
                 k = 0;
                 j++;
             }
-        if (s[ i+1 ] == '\0')
+        if (s[i + 1] == '\0' && s[i] != c)
             str[j][k]='\0';
         i++;
     }
