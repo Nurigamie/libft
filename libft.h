@@ -6,16 +6,18 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:06:46 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 18:41:27 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/09 20:08:52 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
 
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <stddef.h>
 #include <limits.h>
-
 /*int*/
 
 int	ft_isalpha(int arg);

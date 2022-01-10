@@ -6,9 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 12:07:44 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 15:02:51 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/09 20:06:50 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	len(long n)
 {

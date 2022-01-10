@@ -9,6 +9,9 @@
 /*   Updated: 2021/10/19 16:07:19 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
 #include <stdio.h>
 
 void	ft_putchar_fd(char c, int fd)

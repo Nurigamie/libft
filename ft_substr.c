@@ -6,14 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:22:38 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 18:05:54 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/09 20:09:50 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include "ft_strlen.c"
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

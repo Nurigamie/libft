@@ -6,14 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 13:19:34 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/22 12:22:22 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/09 20:08:25 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
-
+#include "libft.h"
 
 static int  nbword(char const *s, char c)
 {

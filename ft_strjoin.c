@@ -6,12 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:38:26 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 16:24:42 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/09 20:09:09 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_strlen.c"
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

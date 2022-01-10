@@ -6,9 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:47:04 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 18:02:42 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/09 20:09:47 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	is_in_set(char c, const char *set)
 {

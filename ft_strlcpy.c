@@ -6,9 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:29:34 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 18:44:18 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/09 20:09:15 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

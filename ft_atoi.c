@@ -6,9 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:41:24 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/22 12:11:53 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/09 20:06:19 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

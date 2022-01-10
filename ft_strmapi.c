@@ -6,12 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 12:14:44 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 17:12:43 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/09 20:09:24 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_strdup.c"
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

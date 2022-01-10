@@ -6,12 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 17:30:12 by mbuchet           #+#    #+#             */
-/*   Updated: 2021/10/21 17:03:18 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/09 20:09:12 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include "ft_strlen.c"
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
