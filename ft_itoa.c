@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 12:07:44 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/09 20:06:50 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/10 17:45:50 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ char	*ft_itoa(int n)
 	str = 0;
 	signe = 0;
 	str = tabchar(str, i, leng, signe);
+	if (n == INT_MIN)
+		return(ft_strdup("-2147483648"));
 	if (!str)
 		return (0);
 	return (str);

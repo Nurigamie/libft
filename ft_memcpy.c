@@ -6,13 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:57:20 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/09 20:07:31 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/10 13:55:59 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stddef.h>
 
 void	*ft_memcpy(char *dst, const void *src, size_t n)
 {

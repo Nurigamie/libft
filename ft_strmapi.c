@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 12:14:44 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/09 20:09:24 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/10 14:21:33 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,31 +31,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		i++;
 	}
 	return (str);
-}
-
-# include <stdio.h>
-
-
-char		mapi(unsigned int i, char c)
-{
-	i = 0;
-	while (i == 0)
-	{
-		if (c >= 'a' && c <= 'z')
-			return (c - 32);
-		else if (c >= 'A' && c <= 'Z')
-			return (c + 32);
-		else
-			return (c);
-	}
-	return (c);
-}
-
-int main ()
-{
-	
-	printf(" |%s| ", ft_strmapi("qui dort dine", &mapi));
-	printf(" |%s| ", ft_strmapi("", &mapi));
-	printf(" |%s| ", ft_strmapi("QUI VOLE UNE POULE, DORMIRA BIEN", &mapi));
-	printf(" |%s| ", ft_strmapi("	ce TEST est UN peu STUPIDE ??", &mapi));
 }

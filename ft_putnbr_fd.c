@@ -14,10 +14,11 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	i;
 
 	if (n == -2147483648)
 		write(fd, "-2147483648", 11);
+	else if (n == 2147483647)
+		write(fd, "2147483647", 11);
 	else
 	{
 		if (n < 0)
@@ -28,14 +29,12 @@ void	ft_putnbr_fd(int n, int fd)
 		}
 		else if (n < 10)
 		{
-			i = n + '0';
-			write(fd, &i, 1);
+			ft_putchar_fd((n + 48 ), fd);
 		}
 		else
 		{
 			ft_putnbr_fd(n / 10, fd);
-			i = (n % 10) + '0';
-			write(fd, &c, 1);
+			ft_putchar_fd(((n % 10)+48), fd);
 		}
 	}
 }
