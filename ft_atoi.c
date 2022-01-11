@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:41:24 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/10 18:01:47 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/11 11:09:18 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,8 @@ int	ft_atoi(const char *str)
 		}
 		else if (str[i] == '+')
 			i++;
-	while ((str[i] != '\0') && (str[i] >= 48 && str[i] <= 57))
+	while ((str[i] != '\0') && (str[i] >= '0' && str[i] <= '9'))
 	{
-		if (res < INT_MIN || res > INT_MAX)
-			return (res < INT_MIN || res > INT_MAX);
 		res = res * 10 + str[i++] - '0';
 	}
 	if (signe == 1)

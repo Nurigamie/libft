@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 13:19:34 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/10 18:51:44 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/11 11:12:24 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static	int nbword(char const *s, char c)
 		if (s[i])
 			i++;
 	}
-	if (nbw <= 0 && s[i-1]==c)
+	if (nbw == 0 && s[i-1]==c)
 		return(0);
 	if (s[0] != c )
 	nbw++;
