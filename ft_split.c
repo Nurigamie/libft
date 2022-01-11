@@ -6,115 +6,122 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 13:19:34 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/11 11:12:24 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/11 17:27:35 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int nbword(char const *s, char c)
+static	int	nbword(char const *s, char c)
 {
 	size_t	nbw;
-	int	i;
+	int		i;
 
 	nbw = 0;
 	i = 0 ;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
-		while(s[i] == c)
+		while (s[i] == c)
 			i++;
 		if (i > 0 && s[i] && s[i - 1] == c)
 			nbw++;
 		if (s[i])
 			i++;
 	}
-	if (nbw == 0 && s[i-1]==c)
-		return(0);
-	if (s[0] != c )
+	if (nbw <= 0 && s[i - 1] == c)
+		return (0);
+	if (s[0] != c && nbw > 0)
 	nbw++;
-	return(nbw);
+	return (nbw);
 }
-static char **alloc(char **str, char const *s, char c )
+
+static	char	*mallocbis(char **str, int i, int count)
 {
-	size_t count; // taille à alloué
-	int i; //axe y
-	int j; //axe x
+	str[i] = malloc(sizeof(char) * (count + 1));
+	if (!str[i])
+		return (0);
+	return (str[i]);
+}
+
+static	char	**alloc(char **str, char const *s, char c )
+{
+	size_t	count;
+	int		i;
+	int		j;
 
 	count = 0;
 	i = 0;
 	j = 0;
-	while(s[i])
+	while (s[i++])
 	{
 		if (s[i] != c)
 			count++;
-		else if (i > 0 && s[i -1] !=c)
+		else if (i > 0 && s[i -1] != c)
 		{
-			str[j] = malloc(sizeof(char) * (count +1));
-			if (!str[j])
-				return(0);
+			mallocbis(str, j, count);
 			count = 0;
 			j++;
 		}
-		if ((s[i + 1] =='\0') && (s[i] != c))
-			if(!(str[j] = malloc(sizeof(char) * (count + 1))))
-				return (0); 
-		i++;
+		if ((s[i + 1] == '\0') && (s[i] != c))
+			mallocbis(str, j, count);
 	}
-	return(str);
+	return (str);
 }
-static char **tab(char **str, char const *s, char c)
+
+static	char	**tab(char **str, char const *s, char c)
 {
-	int i; //increase s
-	int j; // increase axe y
-	int k; //incease axe x
+	int	i;
+	int	j;
+	int	k;
 
 	i = 0;
 	j = 0;
 	k = 0 ;
-	while(s[i])
+	while (s[i])
 	{
 		if (s[i] != c)
 			str[j][k++] = s[i];
 		else if (i > 0 && s[i - 1] != c)
-			if(i!=0)
+		{
+			if (i != 0)
 			{
-				str[j][k]='\0';
+				str[j][k] = '\0';
 				k = 0;
 				j++;
 			}
+		}
 		if (s[i + 1] == '\0' && s[i] != c)
-			str[j][k]='\0';
+			str[j][k] = '\0';
 		i++;
 	}
-	return(str);
+	return (str);
 }
+
 char	**ft_split(char const *s, char c)
 {
-	char **str; //final tab
-	int nbw; // number of words
+	char	**str;
+	int		nbw;
 
-	//if s is empty
-	if(!s || !*s)
+	if (!s || !*s)
 	{
-		str = malloc(sizeof(char *) * 1 );
-		if(!str)
-		return (NULL);
+		str = malloc(sizeof(char *) * 1);
+		if (!str)
+			return (NULL);
 		*str = (void *)0;
-		return(str);
+		return (str);
 	}
 	nbw = nbword(s, c);
-	str = malloc(sizeof(char *) *( nbw + 1));
-	//if the allocation failed
+	str = malloc(sizeof(char *) *(nbw + 1));
 	if (!str)
-		return(0);
-	//if the allocation worked
-	if(alloc(str, s, c) != 0)
-		tab(str, s ,c);
+		return (0);
+	if (alloc(str, s, c) != 0)
+		tab (str, s, c);
 	else
 	{
-		free(str);
-		return(NULL);
+		free (str);
+		return (NULL);
 	}
+	if (nbw > 0)
 	str[nbw] = (void *)0;
-	return(str);
+	return (str);
 }

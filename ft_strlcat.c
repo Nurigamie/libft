@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 17:30:12 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/10 14:08:37 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/11 17:00:01 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (src_len + dst_len);
 	}
 }
-
