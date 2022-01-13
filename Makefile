@@ -52,6 +52,7 @@ OBJECTS_PREFIXED = $(addprefix $(OBJSDIR), $(OBJS))
 CC                = gcc
 RM                = rm -f
 CFLAGS            = -Wall -Wextra -Werror
+OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJSB))
 # **************************************************************************** #
 
 $(OBJS_DIR)%.o : %.c libft.h
@@ -71,3 +72,6 @@ fclean: clean
 	$(RM) $(NAME)
 
 re:	fclean all
+
+bonus: $(OBJECTS_BONUS_PREFIXED)
+	@ar r $(NAME) $(OBJECTS_BONUS_PREFIXED)
