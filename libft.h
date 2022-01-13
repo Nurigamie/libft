@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:06:46 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/13 13:49:57 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/13 16:23:48 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 
 /*char*/
-char	*ft_strchr(register const char *str, int c);
+char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s1);

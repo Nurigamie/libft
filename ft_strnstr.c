@@ -15,19 +15,24 @@
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
+	size_t	j;
+	size_t	len;
+	char	*s;
 
 	i = 0;
-	if (ft_strlen(s2) == 0)
-		return ((char *)s1);
-	while (i < n)
+	s = (char *)s1;
+	len = ft_strlen(s2);
+	if (len == 0 || s1 == s2)
+		return (s);
+	while (s1[i] != '\0' || s1 == s2)
 	{
-		if (ft_strncmp((char *)&s1[i], s2, ft_strlen(s2)) == 0)
-		{
-			if (i + ft_strlen(s2) > n)
-				return (NULL);
-			return ((char *)&s1[i]);
-		}
+		j = 0;
+		while (s1[i + j] != '\0' && s2[j] != '\0'
+			&& s[i + j] == s2[j] && (i + j) < n)
+			j++;
+		if (j == len)
+			return (s + i);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

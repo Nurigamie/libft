@@ -6,13 +6,13 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:18:52 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/09 20:06:43 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/13 19:37:09 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit( int arg )
+int	ft_isdigit( int c )
 {
-	return (arg >= 48 && arg <= 57);
+	return (c >= 47 && c <= 57);
 }

@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 12:07:44 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/11 17:32:32 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/13 17:02:59 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char	*tabchar(char *str, long nb, int leng, int signe)
 	else
 		return (str = ft_strdup("0"));
 	if (!str)
-		return (0);
+		return (NULL);
 	signe = 0;
 	if (nb < 0)
 	{
@@ -57,12 +57,14 @@ static char	*tabchar(char *str, long nb, int leng, int signe)
 		str[0] = '-';
 	else
 		str[0] = (nb % 10) + '0';
+	if (!str)
+		return (NULL);
 	return (str);
 }
 
 char	*ft_itoa(int n)
 {
-	int		leng;
+	long	leng;
 	char	*str;
 	long	i;
 	int		signe;
@@ -72,11 +74,7 @@ char	*ft_itoa(int n)
 	str = 0;
 	signe = 0;
 	str = tabchar(str, i, leng, signe);
-	if (n == INT_MIN)
-		return (ft_strdup("-2147483648"));
-	if (n == INT_MAX)
-		return (ft_strdup("2147483647"));
 	if (!str)
-		return (0);
+		return (NULL);
 	return (str);
 }

@@ -42,8 +42,9 @@ SRCS =	ft_memset.c		\
 		ft_putchar_fd.c	\
 		ft_putstr_fd.c	\
 		ft_putendl_fd.c	\
-		ft_putnbr_fd.c	\
-		ft_lstadd_back.c\
+		ft_putnbr_fd.c	
+
+SRCSB = ft_lstadd_back.c\
 		ft_lstadd_front.c\
 		ft_lstclear.c 	\
 		ft_lstdelone.c	\
@@ -61,6 +62,7 @@ OBJECTS_PREFIXED = $(addprefix $(OBJSDIR), $(OBJS))
 CC                = gcc
 RM                = rm -f
 CFLAGS            = -Wall -Wextra -Werror
+OBJSB  = $(SRCSB:.c=.o)
 OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJSB))
 # **************************************************************************** #
 
