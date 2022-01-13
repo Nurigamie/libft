@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:57:20 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/10 13:55:59 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/13 14:15:18 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 void	*ft_memcpy(char *dst, const void *src, size_t n)
 {
-	char		*dstbis;
-	const char	*srcbis;
+	size_t i;
 
-	if ((dst == src) || n == 0)
-		return (dst);
+	i = 0;
 	if (!dst && !src)
-		return (0);
-	dstbis = (char *)dst;
-	srcbis = (const char *)src;
-	while (n--)
-		dstbis[n] = srcbis[n];
+		return (NULL);
+	while (i < n)
+	{
+		*(char*)(dst +  i) = *(char*)(src + i);
+		i++;
+	}
 	return (dst);
 }
