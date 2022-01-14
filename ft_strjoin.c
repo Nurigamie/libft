@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:38:26 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/13 14:09:11 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/14 17:48:44 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	str = (char *)malloc(sizeof(*str) * (len + 1));
 	if (!str)
@@ -32,9 +34,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	while (s2[i])
 	{
-		str[j] = s2[i];
-		i++;
-		j++;
+		str[j++] = s2[i++];
 	}
 	str[j] = '\0';
 	return (str);

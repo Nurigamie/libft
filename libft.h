@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:06:46 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/13 16:23:48 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/14 16:22:32 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int arg);
 int		ft_isascii(int arg);
 int		ft_isprint(int c);
+int		ft_isdigit( int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
@@ -50,7 +51,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(char *dst, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t length);
 void	*ft_calloc(size_t m, size_t n);
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);

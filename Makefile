@@ -30,6 +30,7 @@ SRCS =	ft_memset.c		\
 		ft_strlcpy.c	\
 		ft_strlcat.c	\
 		ft_strnstr.c	\
+		ft_striteri.c	\
 		ft_atoi.c		\
 		ft_calloc.c		\
 		ft_strdup.c		\
@@ -56,22 +57,15 @@ SRCSB = ft_lstadd_back.c\
 # **************************************************************************** #
 
 NAME	= libft.a
-OBJS_DIR = obj/
 OBJS = $(SRCS:.c=.o)
-OBJECTS_PREFIXED = $(addprefix $(OBJSDIR), $(OBJS))
 CC                = gcc
 RM                = rm -f
 CFLAGS            = -Wall -Wextra -Werror
 OBJSB  = $(SRCSB:.c=.o)
-OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJSB))
 # **************************************************************************** #
 
-$(OBJS_DIR)%.o : %.c libft.h
-	@mkdir -p $(OBJS_DIR)
-	$(CC) $(CC_FLAGS) -c $< -o $@
-
-$(NAME): $(OBJECTS_PREFIXED)
-	@ar r $(NAME) $(OBJECTS_PREFIXED)
+$(NAME): $(OBJS)
+	@ar r $(NAME) $(OBJS)
 
 # **************************************************************************** #
 all:	$(NAME)
@@ -80,9 +74,9 @@ clean:
 	$(RM) $(OBJS) 
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(OBJSB)
 
 re:	fclean all
 
-bonus: $(OBJECTS_BONUS_PREFIXED)
-	@ar r $(NAME) $(OBJECTS_BONUS_PREFIXED)
+bonus: $(OBJSB)
+	@ar r $(NAME) $(OBJSB)

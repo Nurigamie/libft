@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:22:38 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/13 15:05:47 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/14 17:43:12 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if (!s)
+		return (NULL);
 	str = (char *)malloc (sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:47:04 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/11 16:57:59 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/01/14 17:47:09 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 
 	start = 0;
+	if (!s1 || !set)
+		return (NULL);
 	while (s1[start] && is_in_set(s1[start], set))
 		start++;
 	end = ft_strlen(s1);

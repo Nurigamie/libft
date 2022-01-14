@@ -22,8 +22,6 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	i = 0;
 	s = (char *)s1;
 	len = ft_strlen(s2);
-	if (len == 0 || s1 == s2)
-		return (s);
 	while (s1[i] != '\0' || s1 == s2)
 	{
 		j = 0;
