@@ -6,20 +6,11 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:41:24 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/02/04 12:28:23 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/02/04 13:58:16 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static	int	overflow(unsigned int n, int s, char c)
-{
-	if (s == 1 && ((unsigned)INT_MAX - (c - '0')) / 10 < n)
-		return (0);
-	if (s == 0 && ((unsigned)INT_MIN - (c - '0')) / 10 < n)
-		return (-1);
-	return (1);
-}
 
 static	int	avoid(char c)
 {
@@ -32,6 +23,15 @@ static	int	avoid(char c)
 	else
 		avoid = 0;
 	return (avoid);
+}
+
+static	int	overflow(unsigned int n, int s, char c)
+{
+	if (s == 1 && ((unsigned)INT_MAX - (c - '0')) / 10 < n)
+		return (0);
+	if (s == 0 && ((unsigned)INT_MIN - (c - '0')) / 10 < n)
+		return (-1);
+	return (1);
 }
 
 int	ft_atoi(const char *str)
