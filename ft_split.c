@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str.c                                         :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 13:19:34 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/14 15:56:21 by mbuchet          ###   ########.fr       */
+/*   Created: 2022/02/04 11:32:13 by mbuchet           #+#    #+#             */
+/*   Updated: 2022/02/04 12:23:16 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,33 @@ static char	*word_dup(const char *str, int start, int finish)
 
 	i = 0;
 	word = malloc((finish - start + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
 	while (start < finish)
 		word[i++] = str[start++];
 	word[i] = '\0';
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+char	**free_allocfailed(char **str, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+		free(str[i]);
+		i++;
+	}
+	return (NULL);
+}
+
+char	**splitbis(char const *s, char c, char **str)
 {
 	size_t	i;
 	size_t	j;
 	int		k;
-	char	**str;
 
-	str = malloc((nbwords(s, c) + 1) * sizeof(char *));
-	if (!s || !str)
-		return (NULL);
 	i = 0;
 	j = 0;
 	k = -1;
@@ -65,11 +76,27 @@ char	**ft_split(char const *s, char c)
 			k = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && k >= 0)
 		{
-			str[j++] = word_dup(s, k, i);
+			str[j] = word_dup(s, k, i);
+			if (!str[j])
+				return (free_allocfailed(str, j));
 			k = -1;
+			j++;
 		}
 		i++;
 	}
 	str[j] = 0;
+	return (str);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**str;
+
+	if (!s)
+		return (NULL);
+	str = malloc((nbwords(s, c) + 1) * sizeof(char *));
+	if (!str)
+		return (NULL);
+	str = splitbis(s, c, str);
 	return (str);
 }

@@ -6,13 +6,13 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:41:24 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/11 18:32:19 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/02/04 12:28:23 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	overflow(unsigned int n, char s, char c)
+static	int	overflow(unsigned int n, int s, char c)
 {
 	if (s == 1 && ((unsigned)INT_MAX - (c - '0')) / 10 < n)
 		return (0);

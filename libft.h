@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:06:46 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/14 16:22:32 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/02/03 15:13:34 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void	*ft_memset(void *str, int c, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t n);
 void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(char *dst, const void *src, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t length);
 void	*ft_calloc(size_t m, size_t n);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
