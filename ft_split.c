@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 11:32:13 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/02/09 13:02:36 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/02/09 16:02:38 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,11 @@ static char	*word_dup(const char *str, int start, int finish)
 	if (!word)
 		return (NULL);
 	while (start < finish)
-		word[i++] = str[start++];
+	{
+		word[i] = str[start];
+		i++;
+		start++;
+	}	
 	word[i] = '\0';
 	return (word);
 }

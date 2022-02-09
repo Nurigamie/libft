@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 17:03:51 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/01/10 13:56:04 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/02/09 16:01:09 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char	*dstbis;
-	char	*srcbis;
+	unsigned char	*dstbis;
+	unsigned char	*srcbis;
 
 	dstbis = (char *)dst;
 	srcbis = (char *)src;
