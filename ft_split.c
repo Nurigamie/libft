@@ -6,7 +6,7 @@
 /*   By: mbuchet <mbuchet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 11:32:13 by mbuchet           #+#    #+#             */
-/*   Updated: 2022/02/04 12:23:16 by mbuchet          ###   ########.fr       */
+/*   Updated: 2022/02/09 13:02:36 by mbuchet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	**free_allocfailed(char **str, size_t len)
 	size_t	i;
 
 	i = 0;
-	while (i < len)
+	while (i < len + 1)
 	{
 		free(str[i]);
 		i++;
