@@ -57,10 +57,11 @@ SRCSB = ft_lstadd_back.c\
 # **************************************************************************** #
 
 NAME	= libft.a
-OBJS = $(SRCS:.c=.o)
+INCLUDES = libft.h
 CC                = gcc
 RM                = rm -f
 CFLAGS            = -Wall -Wextra -Werror
+OBJS = $(SRCS:.c=.o)
 OBJSB  = $(SRCSB:.c=.o)
 # **************************************************************************** #
 
